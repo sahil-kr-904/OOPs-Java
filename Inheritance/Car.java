@@ -3,15 +3,12 @@ public class Car extends Vehicle{
     String color;
     
     void start(){
-        Scooter s1 = new Scooter();
-        // s1.braking(this);
-        System.out.println(this==this.braking());
         System.out.println(this.model+" Car is starting");
     }
 
-    Car braking(){
-        return this;
-    }
+    // void accelerate(){
+    //     System.out.println("Car is accelerating");
+    // } Method can't be overriden bcoz parent class has final method
      
     public static void main(String args[]){
         Car c1 = new Car();
@@ -19,12 +16,8 @@ public class Car extends Vehicle{
         c1.model = "abcde";
         c1.color = "red";
         c1.start();
+        c1.accelerate();
     }
 }
 
-class Scooter{
-
-    void braking(Car car){
-        System.out.println(car.model + " is braking");
-    }
-}
+// final class cannot be inherited from other classes
